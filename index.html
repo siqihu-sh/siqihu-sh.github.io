@@ -3,291 +3,585 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Siqi Hu | Library & Information Science</title>
 
     <style>
+        /* ---------- Base ---------- */
+
         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                         Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            color: #222;
+            background: #fdfdfb;
             line-height: 1.6;
-            color: #333;
-            background: #fafafa;
         }
 
-        header {
-            background: white;
-            border-bottom: 1px solid #e5e5e5;
-            padding: 20px 8%;
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ---------- Navigation ---------- */
+
+        nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 28px 40px;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            font-family: Arial, Helvetica, sans-serif;
         }
 
-        header h1 {
-            font-size: 1.4rem;
+        .logo {
+            font-size: 1rem;
             font-weight: 600;
+            letter-spacing: 0.08em;
         }
 
-        nav a {
-            margin-left: 25px;
-            text-decoration: none;
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a {
             color: #555;
-            font-size: 0.95rem;
+            transition: color 0.2s ease;
         }
 
-        nav a:hover {
+        .nav-links a:hover {
             color: #000;
         }
 
+        /* ---------- Hero ---------- */
+
         .hero {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 100px 30px 80px;
+            padding: 130px 40px 150px;
         }
 
-        .hero h2 {
-            font-size: 3rem;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            font-weight: 600;
+        .eyebrow {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #777;
+            margin-bottom: 25px;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 700px;
+        .hero h1 {
+            max-width: 850px;
+            margin: 0;
+            font-size: clamp(3rem, 7vw, 6.5rem);
+            line-height: 0.98;
+            font-weight: 400;
+            letter-spacing: -0.04em;
         }
 
-        .section {
-            max-width: 1000px;
+        .hero-description {
+            max-width: 650px;
+            margin-top: 40px;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.15rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .hero-link {
+            display: inline-block;
+            margin-top: 35px;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #222;
+            padding-bottom: 4px;
+        }
+
+        /* ---------- Sections ---------- */
+
+        section {
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 70px 30px;
+            padding: 100px 40px;
         }
 
-        .section h2 {
+        .section-label {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: #777;
+            margin-bottom: 50px;
+        }
+
+        /* ---------- Projects ---------- */
+
+        .project {
+            border-top: 1px solid #ccc;
+            padding: 35px 0 45px;
+
+            display: grid;
+            grid-template-columns: 80px 1fr 180px;
+            gap: 30px;
+
+            transition: padding-left 0.2s ease;
+        }
+
+        .project:hover {
+            padding-left: 10px;
+        }
+
+        .project-number {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .project-title {
+            margin: 0 0 12px;
+
             font-size: 2rem;
-            margin-bottom: 35px;
+            font-weight: 400;
+            line-height: 1.2;
         }
+
+        .project-description {
+            max-width: 600px;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .project-tools {
+            margin-top: 18px;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.75rem;
+            color: #777;
+            letter-spacing: 0.03em;
+        }
+
+        .project-link {
+            align-self: center;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.85rem;
+            text-align: right;
+        }
+
+        .project-link span {
+            border-bottom: 1px solid #222;
+            padding-bottom: 3px;
+        }
+
+        /* ---------- About ---------- */
 
         .about {
-            background: white;
+            border-top: 1px solid #ccc;
         }
 
-        .about p {
+        .about-content {
             max-width: 750px;
-            color: #555;
-            font-size: 1.05rem;
         }
 
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+        .about-content p {
+            margin: 0 0 25px;
+
+            font-size: 1.5rem;
+            line-height: 1.55;
         }
 
-        .project-card {
-            background: white;
-            border: 1px solid #e5e5e5;
-            border-radius: 10px;
-            padding: 28px;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-        }
-
-        .project-card h3 {
-            margin-bottom: 12px;
-            font-size: 1.25rem;
-        }
-
-        .project-card p {
+        .about-content p:last-child {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1rem;
             color: #666;
-            margin-bottom: 18px;
+            line-height: 1.8;
         }
 
-        .project-card a {
-            text-decoration: none;
-            color: #315f8c;
-            font-weight: 500;
-        }
+        /* ---------- Skills ---------- */
 
         .skills {
+            border-top: 1px solid #ccc;
+            padding-top: 35px;
+
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
         }
 
         .skill {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 20px;
-            padding: 8px 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.85rem;
+
+            padding: 9px 15px;
+            border: 1px solid #ccc;
+            border-radius: 30px;
+        }
+
+        /* ---------- Contact ---------- */
+
+        .contact {
+            border-top: 1px solid #ccc;
+        }
+
+        .contact h2 {
+            max-width: 700px;
+            margin: 0 0 35px;
+
+            font-size: clamp(2.5rem, 5vw, 5rem);
+            line-height: 1;
+            font-weight: 400;
+            letter-spacing: -0.03em;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 30px;
+
+            font-family: Arial, Helvetica, sans-serif;
             font-size: 0.9rem;
         }
+
+        .contact-links a {
+            border-bottom: 1px solid #222;
+            padding-bottom: 3px;
+        }
+
+        /* ---------- Footer ---------- */
 
         footer {
-            text-align: center;
-            padding: 40px 20px;
-            border-top: 1px solid #e5e5e5;
-            color: #777;
-            font-size: 0.9rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 40px 35px;
+
+            display: flex;
+            justify-content: space-between;
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.75rem;
+            color: #888;
         }
 
+        /* ---------- Mobile ---------- */
+
         @media (max-width: 700px) {
-            header {
-                flex-direction: column;
+
+            nav {
+                padding: 25px 25px;
+            }
+
+            .nav-links {
                 gap: 15px;
             }
 
-            nav a {
-                margin: 0 8px;
+            .hero {
+                padding: 90px 25px 110px;
             }
 
-            .hero h2 {
-                font-size: 2.3rem;
+            section {
+                padding: 75px 25px;
+            }
+
+            .project {
+                grid-template-columns: 45px 1fr;
+                gap: 15px;
+            }
+
+            .project-link {
+                grid-column: 2;
+                text-align: left;
+                margin-top: 5px;
+            }
+
+            .project-title {
+                font-size: 1.6rem;
+            }
+
+            .about-content p {
+                font-size: 1.25rem;
+            }
+
+            footer {
+                padding: 40px 25px 25px;
+                flex-direction: column;
+                gap: 10px;
             }
         }
     </style>
 </head>
 
+
 <body>
 
-<header>
-    <h1>Siqi Hu</h1>
+    <!-- Navigation -->
 
     <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+        <a href="#" class="logo">SIQI HU</a>
+
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
     </nav>
-</header>
 
-<section class="hero">
-    <h2>Library & Information Science</h2>
 
-    <p>
-        MSLIS candidate interested in digital collections, metadata,
-        archives, information organization, and community-centered
-        information services.
-    </p>
-</section>
+    <!-- Hero -->
 
-<section id="about" class="about">
-    <div class="section">
-        <h2>About Me</h2>
+    <header class="hero">
 
-        <p>
-            I am a Master of Science in Library and Information Science
-            student at the University of Illinois Urbana-Champaign.
-            My interests include digital collections, archival description,
-            metadata, information organization, and the use of technology
-            to improve access to information.
+        <div class="eyebrow">
+            Library & Information Science
+        </div>
+
+        <h1>
+            Organizing information.<br>
+            Connecting people.
+        </h1>
+
+        <p class="hero-description">
+            I am an MSLIS candidate interested in archives, metadata,
+            digital collections, and community-centered access to information.
         </p>
-    </div>
-</section>
 
-<section id="projects">
-    <div class="section">
-        <h2>Featured Projects</h2>
+        <a href="#projects" class="hero-link">
+            Explore my work ↓
+        </a>
 
-        <div class="projects">
+    </header>
 
-            <div class="project-card">
-                <h3>International Book Donation Management System</h3>
 
-                <p>
+    <!-- Projects -->
+
+    <section id="projects">
+
+        <div class="section-label">
+            Selected Projects
+        </div>
+
+
+        <!-- Project 01 -->
+
+        <article class="project">
+
+            <div class="project-number">
+                01
+            </div>
+
+            <div>
+                <h2 class="project-title">
+                    International Book Donation
+                    Management System
+                </h2>
+
+                <p class="project-description">
                     A database-driven system designed to support the
-                    management of international book donations.
+                    management of international book donations and
+                    improve information organization for a nonprofit organization.
                 </p>
 
+                <div class="project-tools">
+                    Database Design · SQL · Python · Django
+                </div>
+            </div>
+
+            <div class="project-link">
                 <a href="https://github.com/siqihu-sh/International-book-project"
                    target="_blank">
-                    View project →
+                    <span>View project →</span>
                 </a>
             </div>
 
-            <div class="project-card">
-                <h3>Automated Membership Renewal Email</h3>
+        </article>
 
-                <p>
-                    A Python-based project exploring automation of
-                    membership renewal communications.
-                </p>
 
-                <a href="https://github.com/siqihu-sh/Automated-membership-renewal-email"
-                   target="_blank">
-                    View project →
-                </a>
+        <!-- Project 02 -->
+
+        <article class="project">
+
+            <div class="project-number">
+                02
             </div>
 
-            <div class="project-card">
-                <h3>Archive & Metadata Project</h3>
+            <div>
+                <h2 class="project-title">
+                    Archive & Metadata Project
+                </h2>
 
-                <p>
-                    An independent archival project focused on organizing,
-                    describing, and improving access to historical materials.
+                <p class="project-description">
+                    An archival project focused on organizing,
+                    describing, and improving access to historical
+                    materials through structured metadata and
+                    archival description.
                 </p>
 
+                <div class="project-tools">
+                    Metadata · Archival Description ·
+                    Information Organization
+                </div>
+            </div>
+
+            <div class="project-link">
                 <a href="#contact">
-                    Coming soon →
+                    <span>Coming soon →</span>
                 </a>
             </div>
+
+        </article>
+
+
+        <!-- Project 03 -->
+
+        <article class="project">
+
+            <div class="project-number">
+                03
+            </div>
+
+            <div>
+                <h2 class="project-title">
+                    Archive Toolkit & LibGuide
+                </h2>
+
+                <p class="project-description">
+                    A user-centered resource guide designed to help
+                    families and small organizations understand
+                    archival organization, description, preservation,
+                    and access.
+                </p>
+
+                <div class="project-tools">
+                    Research · Information Architecture ·
+                    User-Centered Design
+                </div>
+            </div>
+
+            <div class="project-link">
+                <a href="#contact">
+                    <span>Coming soon →</span>
+                </a>
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- About -->
+
+    <section id="about" class="about">
+
+        <div class="section-label">
+            About
+        </div>
+
+        <div class="about-content">
+
+            <p>
+                I am a Master of Science in Library and Information
+                Science student at the University of Illinois
+                Urbana-Champaign.
+            </p>
+
+            <p>
+                My interests sit at the intersection of information
+                organization, technology, and community access. I am
+                particularly interested in metadata, archives, digital
+                collections, and developing practical information
+                systems that make resources easier to organize,
+                discover, and use.
+            </p>
 
         </div>
-    </div>
-</section>
 
-<section id="skills" class="about">
-    <div class="section">
-        <h2>Skills & Interests</h2>
+    </section>
+
+
+    <!-- Skills -->
+
+    <section id="skills">
+
+        <div class="section-label">
+            Skills & Areas of Interest
+        </div>
 
         <div class="skills">
-            <span class="skill">Metadata</span>
-            <span class="skill">Archives</span>
-            <span class="skill">Digital Collections</span>
-            <span class="skill">Information Organization</span>
-            <span class="skill">Python</span>
-            <span class="skill">SQL</span>
-            <span class="skill">HTML / CSS / JavaScript</span>
-            <span class="skill">Django</span>
-            <span class="skill">Omeka</span>
-            <span class="skill">Archivematica</span>
-            <span class="skill">ArchivesSpace</span>
+
+            <div class="skill">Metadata</div>
+            <div class="skill">Archives</div>
+            <div class="skill">Digital Collections</div>
+            <div class="skill">Information Organization</div>
+            <div class="skill">Python</div>
+            <div class="skill">SQL</div>
+            <div class="skill">HTML / CSS / JavaScript</div>
+            <div class="skill">Django</div>
+            <div class="skill">Omeka</div>
+            <div class="skill">Archivematica</div>
+            <div class="skill">ArchivesSpace</div>
+            <div class="skill">User-Centered Design</div>
+
         </div>
-    </div>
-</section>
 
-<section id="contact">
-    <div class="section">
-        <h2>Contact</h2>
+    </section>
 
-        <p>
+
+    <!-- Contact -->
+
+    <section id="contact" class="contact">
+
+        <div class="section-label">
+            Contact
+        </div>
+
+        <h2>
+            Let's connect.
+        </h2>
+
+        <div class="contact-links">
+
             <a href="mailto:siqhusq@gmail.com">
-                siqhusq@gmail.com
+                Email
             </a>
-        </p>
 
-        <p>
-            <a href="https://github.com/siqihu-sh" target="_blank">
+            <a href="https://github.com/siqihu-sh"
+               target="_blank">
                 GitHub
             </a>
-        </p>
-    </div>
-</section>
 
-<footer>
-    © 2026 Siqi Hu
-</footer>
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div>
+            © 2026 Siqi Hu
+        </div>
+
+        <div>
+            Library & Information Science
+        </div>
+
+    </footer>
 
 </body>
 </html>
