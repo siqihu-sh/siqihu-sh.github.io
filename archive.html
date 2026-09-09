@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>International Book Project Records | Siqi Hu</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #faf9f6;
+        }
+
+        a {
+            color: #5f6f52;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Navigation */
+        nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        nav .back {
+            font-size: 0.95rem;
+        }
+
+        /* Hero */
+        .hero {
+            max-width: 1000px;
+            margin: 70px auto 60px;
+            padding: 0 30px;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            color: #263238;
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            color: #667;
+            max-width: 750px;
+            margin-bottom: 25px;
+        }
+
+        .hero .description {
+            max-width: 800px;
+            font-size: 1rem;
+        }
+
+        /* Main */
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 30px 80px;
+        }
+
+        section {
+            margin-bottom: 70px;
+        }
+
+        section h2 {
+            font-size: 1.8rem;
+            color: #263238;
+            margin-bottom: 20px;
+        }
+
+        section h3 {
+            font-size: 1.2rem;
+            margin: 25px 0 10px;
+            color: #3d4a3d;
+        }
+
+        p {
+            margin-bottom: 15px;
+            max-width: 850px;
+        }
+
+        /* Project Facts */
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 40px 0;
+        }
+
+        .fact {
+            background: white;
+            padding: 25px 20px;
+            border: 1px solid #e5e2dc;
+            text-align: center;
+        }
+
+        .fact .number {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #5f6f52;
+            margin-bottom: 5px;
+        }
+
+        .fact .label {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* Workflow */
+        .workflow {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .workflow-step {
+            background: white;
+            border: 1px solid #e5e2dc;
+            padding: 22px;
+        }
+
+        .workflow-step .step-number {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        .workflow-step h3 {
+            margin: 0 0 8px;
+            font-size: 1rem;
+        }
+
+        .workflow-step p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Material Types */
+        .material-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .material {
+            background: white;
+            padding: 15px 18px;
+            border-left: 3px solid #8a9a7b;
+        }
+
+        /* Table */
+        .collection-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+            background: white;
+        }
+
+        .collection-table th,
+        .collection-table td {
+            padding: 14px 15px;
+            border-bottom: 1px solid #e5e2dc;
+            text-align: left;
+        }
+
+        .collection-table th {
+            background: #f0eee8;
+            font-weight: 600;
+        }
+
+        /* Series */
+        .series {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .series-item {
+            background: white;
+            padding: 20px;
+            border: 1px solid #e5e2dc;
+        }
+
+        .series-item strong {
+            display: block;
+            margin-bottom: 6px;
+            color: #3d4a3d;
+        }
+
+        .series-item span {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Decision Cards */
+        .decisions {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .decision {
+            background: white;
+            padding: 25px;
+            border: 1px solid #e5e2dc;
+        }
+
+        .decision h3 {
+            margin-top: 0;
+        }
+
+        /* Skills */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .skill {
+            background: #e9ebe4;
+            padding: 8px 14px;
+            font-size: 0.85rem;
+        }
+
+        /* Button */
+        .button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 12px 20px;
+            background: #5f6f52;
+            color: white;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background: #4e5d44;
+            text-decoration: none;
+        }
+
+        /* Note */
+        .note {
+            background: #f0eee8;
+            padding: 20px 25px;
+            margin-top: 25px;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid #e5e2dc;
+            padding: 30px;
+            text-align: center;
+            color: #777;
+            font-size: 0.85rem;
+        }
+
+        /* Mobile */
+        @media (max-width: 800px) {
+
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .facts {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .workflow {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .series,
+            .decisions,
+            .material-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            nav {
+                padding: 20px;
+            }
+
+            .hero,
+            main {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .facts {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .workflow {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Siqi Hu</div>
+
+        <a class="back" href="index.html">
+            ← Back to Portfolio
+        </a>
+    </nav>
+
+
+    <!-- Hero -->
+    <header class="hero">
+
+        <div class="eyebrow">
+            Independent Archival Project · 2026
+        </div>
+
+        <h1>
+            International Book Project Records
+        </h1>
+
+        <p class="subtitle">
+            Collection Assessment, Processing, Description & Digitization
+        </p>
+
+        <p class="description">
+            An archival processing project focused on organizing,
+            describing, preserving, and improving access to historical
+            records of the International Book Project (IBP), a Lexington,
+            Kentucky nonprofit organization founded in 1966.
+        </p>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- Project Snapshot -->
+        <section>
+
+            <div class="facts">
+
+                <div class="fact">
+                    <span class="number">1966–2018</span>
+                    <span class="label">Collection Date Range</span>
+                </div>
+
+                <div class="fact">
+                    <span class="number">1,400+</span>
+                    <span class="label">Textual Pages</span>
+                </div>
+
+                <div class="fact">
+                    <span class="number">500+</span>
+                    <span class="label">Photographs</span>
+                </div>
+
+                <div class="fact">
+                    <span class="number">266</span>
+                    <span class="label">Slides & Audiovisual Tapes</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Overview -->
+        <section>
+
+            <h2>Project Overview</h2>
+
+            <p>
+                The International Book Project Records document more than
+                five decades of nonprofit activity, including book donation
+                and distribution programs, fundraising, organizational
+                development, international partnerships, and community
+                engagement.
+            </p>
+
+            <p>
+                As part of an independent archival project, I conducted an
+                initial inventory and developed a processing plan for a
+                heterogeneous collection containing correspondence,
+                administrative records, photographs, publications,
+                financial records, scrapbooks, and audiovisual materials.
+            </p>
+
+            <p>
+                The project focused on balancing archival principles with
+                the practical needs and resources of a small nonprofit
+                organization.
+            </p>
+
+        </section>
+
+
+        <!-- Workflow -->
+        <section>
+
+            <h2>From Inventory to Access</h2>
+
+            <p>
+                I approached the collection as a complete processing
+                workflow, moving from initial assessment to arrangement,
+                description, preservation, digitization, and access.
+            </p>
+
+            <div class="workflow">
+
+                <div class="workflow-step">
+                    <div class="step-number">01</div>
+                    <h3>Inventory</h3>
+                    <p>
+                        Identified formats, date ranges, quantities,
+                        existing organization, and condition concerns.
+                    </p>
+                </div>
+
+                <div class="workflow-step">
+                    <div class="step-number">02</div>
+                    <h3>Processing Plan</h3>
+                    <p>
+                        Developed a processing workflow, estimated
+                        processing time, and identified preservation needs.
+                    </p>
+                </div>
+
+                <div class="workflow-step">
+                    <div class="step-number">03</div>
+                    <h3>Arrangement</h3>
+                    <p>
+                        Evaluated existing order and developed functional
+                        series to improve intellectual access.
+                    </p>
+                </div>
+
+                <div class="workflow-step">
+                    <div class="step-number">04</div>
+                    <h3>Rehousing</h3>
+                    <p>
+                        Planned refoldering and labeling using
+                        archival-quality housing.
+                    </p>
+                </div>
+
+                <div class="workflow-step">
+                    <div class="step-number">05</div>
+                    <h3>Description</h3>
+                    <p>
+                        Prepared folder-level descriptions and a finding
+                        aid to support discovery.
+                    </p>
+                </div>
+
+                <div class="workflow-step">
+                    <div class="step-number">06</div>
+                    <h3>Digitization</h3>
+                    <p>
+                        Digitized textual records, photographs, slides,
+                        and audiovisual materials where equipment was
+                        available.
+                    </p>
+                </div>
+
+                <div class="workflow-step">
+                    <div class="step-number">07</div>
+                    <h3>Access</h3>
+                    <p>
+                        Organized digital files according to the archival
+                        arrangement and standardized file naming.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Collection Assessment -->
+        <section>
+
+            <h2>Collection Assessment</h2>
+
+            <p>
+                The initial inventory identified a heterogeneous collection
+                spanning multiple formats, subjects, and decades. The
+                accessible materials included both organizational records
+                and materials documenting the experiences of book recipients,
+                volunteers, donors, and community members.
+            </p>
+
+            <div class="material-list">
+
+                <div class="material">Photographs</div>
+
+                <div class="material">Correspondence</div>
+
+                <div class="material">Administrative Records</div>
+
+                <div class="material">Newsletters</div>
+
+                <div class="material">Newspaper & Periodical Coverage</div>
+
+                <div class="material">Financial Records</div>
+
+                <div class="material">Scrapbooks</div>
+
+                <div class="material">Audiovisual Materials</div>
+
+            </div>
+
+
+            <table class="collection-table">
+
+                <thead>
+                    <tr>
+                        <th>Format</th>
+                        <th>Approximate Quantity</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Textual records</td>
+                        <td>1,400+ pages</td>
+                    </tr>
+
+                    <tr>
+                        <td>Photographs</td>
+                        <td>500+</td>
+                    </tr>
+
+                    <tr>
+                        <td>Slides</td>
+                        <td>250</td>
+                    </tr>
+
+                    <tr>
+                        <td>VHS tapes</td>
+                        <td>11</td>
+                    </tr>
+
+                    <tr>
+                        <td>U-matic cassettes</td>
+                        <td>5</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+            <div class="note">
+                <strong>Scope note:</strong>
+                The initial inventory was limited to four accessible boxes.
+                Additional materials were known to be stored in the attic
+                but were not accessible during the project period.
+            </div>
+
+        </section>
+
+
+        <!-- Arrangement -->
+        <section>
+
+            <h2>Arrangement</h2>
+
+            <p>
+                The existing collection had no consistent overarching
+                arrangement. Many folders contained mixed record types,
+                while some materials retained partial chronological or
+                topical groupings.
+            </p>
+
+            <p>
+                After consultation with the organization’s director,
+                rearrangement into functional series was permitted in order
+                to improve intellectual access and structural clarity.
+            </p>
+
+
+            <div class="series">
+
+                <div class="series-item">
+                    <strong>Series I — Correspondence</strong>
+                    <span>
+                        Organizational and individual correspondence.
+                    </span>
+                </div>
+
+                <div class="series-item">
+                    <strong>Series II — Newsletters</strong>
+                    <span>
+                        Organizational newsletters dating from 1973–2002.
+                    </span>
+                </div>
+
+                <div class="series-item">
+                    <strong>Series III — Newspaper & Periodical Coverage</strong>
+                    <span>
+                        Public coverage of IBP and related activities.
+                    </span>
+                </div>
+
+                <div class="series-item">
+                    <strong>Series IV — Administrative Records</strong>
+                    <span>
+                        Meeting minutes, board records, and annual reports.
+                    </span>
+                </div>
+
+                <div class="series-item">
+                    <strong>Series V — Photographic Materials</strong>
+                    <span>
+                        Photographs documenting IBP activities,
+                        volunteers, recipients, and founder Harriet Van Meter.
+                    </span>
+                </div>
+
+                <div class="series-item">
+                    <strong>Series VI — Financial Records</strong>
+                    <span>
+                        Financial reports and related fiscal records.
+                    </span>
+                </div>
+
+                <div class="series-item">
+                    <strong>Series VII — Outreach & Fundraising</strong>
+                    <span>
+                        Events, fundraising, and public engagement materials.
+                    </span>
+                </div>
+
+                <div class="series-item">
+                    <strong>Series VIII — Founder Personal Files</strong>
+                    <span>
+                        Personal correspondence and materials related to
+                        Harriet Van Meter.
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Processing Decisions -->
+        <section>
+
+            <h2>Processing Decisions</h2>
+
+            <div class="decisions">
+
+                <div class="decision">
+
+                    <h3>Existing Order</h3>
+
+                    <p>
+                        Rather than imposing a new arrangement without
+                        consultation, I evaluated existing groupings and
+                        discussed proposed rearrangement with the
+                        organization’s director.
+                    </p>
+
+                </div>
+
+
+                <div class="decision">
+
+                    <h3>Resource-Aware Processing</h3>
+
+                    <p>
+                        Processing decisions considered the organization’s
+                        available resources, existing housing, and practical
+                        access needs rather than assuming a museum-scale
+                        infrastructure.
+                    </p>
+
+                </div>
+
+
+                <div class="decision">
+
+                    <h3>Preservation</h3>
+
+                    <p>
+                        Rusted paper clips were identified for removal and
+                        records were planned for rehousing in acid-free
+                        folders.
+                    </p>
+
+                </div>
+
+
+                <div class="decision">
+
+                    <h3>Faded Materials</h3>
+
+                    <p>
+                        Two thermal-paper documents were highly faded.
+                        Digitization was prioritized to preserve access to
+                        information that was becoming difficult to read.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Digitization -->
+        <section>
+
+            <h2>Digitization</h2>
+
+            <p>
+                Digitization was planned as an integral part of the
+                processing workflow rather than as a separate activity.
+                Digital files were organized according to the established
+                archival structure and assigned standardized filenames.
+            </p>
+
+            <p>
+                The collection included multiple legacy formats requiring
+                different approaches to digitization. VHS and U-matic
+                materials presented additional challenges because
+                digitization requires real-time playback and specialized
+                equipment.
+            </p>
+
+            <div class="note">
+                <strong>Access note:</strong>
+                Digitized collection materials are not publicly displayed
+                in this portfolio because the collection is restricted to
+                internal organizational access.
+            </div>
+
+        </section>
+
+
+        <!-- Finding Aid -->
+        <section>
+
+            <h2>Finding Aid</h2>
+
+            <p>
+                A finding aid was developed to provide intellectual access
+                to the processed collection. The description includes
+                collection-level information, administrative history,
+                scope and content, arrangement, and folder-level
+                descriptions.
+            </p>
+
+            <!--
+            ADD FINDING AID LINK HERE LATER
+
+            Example:
+
+            <a class="button" href="documents/IBP-Finding-Aid.pdf"
+               target="_blank">
+                View Finding Aid →
+            </a>
+            -->
+
+        </section>
+
+
+        <!-- Archive Toolkit -->
+        <section>
+
+            <h2>Archive Toolkit</h2>
+
+            <p>
+                A practical outcome of the project was the development of
+                an archival toolkit designed to help families and small
+                organizations begin organizing, describing, preserving,
+                and sharing historical materials.
+            </p>
+
+            <a
+                class="button"
+                href="https://ischoolillinois.libguides.com/c.php?g=1544783&p=11583940&preview=c38d52ae8e57b39407808e2287087ef3"
+                target="_blank">
+                View Archive Toolkit →
+            </a>
+
+        </section>
+
+
+        <!-- Skills -->
+        <section>
+
+            <h2>Skills & Concepts</h2>
+
+            <div class="skills">
+
+                <span class="skill">Collection Assessment</span>
+
+                <span class="skill">Archival Processing</span>
+
+                <span class="skill">Arrangement</span>
+
+                <span class="skill">Finding Aids</span>
+
+                <span class="skill">Metadata</span>
+
+                <span class="skill">Preservation</span>
+
+                <span class="skill">Digitization</span>
+
+                <span class="skill">Community Archives</span>
+
+                <span class="skill">Digital Access</span>
+
+                <span class="skill">EAD</span>
+
+                <span class="skill">DACS</span>
+
+            </div>
+
+        </section>
+
+
+        <!-- Reflection -->
+        <section>
+
+            <h2>Reflection</h2>
+
+            <p>
+                This project reinforced that archival practice requires
+                balancing professional standards with the context and
+                resources of the organization.
+            </p>
+
+            <p>
+                Working with a heterogeneous collection also demonstrated
+                how arrangement and description directly influence
+                discovery and access. Decisions about organization,
+                metadata, preservation, and digitization are interconnected
+                rather than isolated stages of processing.
+            </p>
+
+            <p>
+                Most importantly, the project allowed me to connect
+                archival theory with hands-on processing and to develop
+                practical approaches for making community collections more
+                usable and sustainable.
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+    <footer>
+        © 2026 Siqi Hu · MSLIS · University of Illinois Urbana-Champaign
+    </footer>
+
+
+</body>
+</html>
