@@ -80,11 +80,11 @@
             font-size: 1.25rem;
             color: #667;
             max-width: 750px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .hero .description {
-            max-width: 800px;
+            max-width: 760px;
             font-size: 1rem;
         }
 
@@ -108,8 +108,6 @@
         }
 
         section h3 {
-            font-size: 1.2rem;
-            margin: 25px 0 10px;
             color: #3d4a3d;
         }
 
@@ -153,7 +151,7 @@
 
         .workflow {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 15px;
             margin-top: 30px;
         }
@@ -181,98 +179,57 @@
         }
 
 
-        /* Material Types */
+        /* Evidence */
 
-        .material-list {
+        .evidence-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin-top: 25px;
-        }
-
-        .material {
-            background: white;
-            padding: 15px 18px;
-            border-left: 3px solid #8a9a7b;
-        }
-
-
-        /* Table */
-
-        .collection-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 25px;
-            background: white;
-        }
-
-        .collection-table th,
-        .collection-table td {
-            padding: 14px 15px;
-            border-bottom: 1px solid #e5e2dc;
-            text-align: left;
-        }
-
-        .collection-table th {
-            background: #f0eee8;
-            font-weight: 600;
-        }
-
-
-        /* Series */
-
-        .series {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-top: 25px;
-        }
-
-        .series-item {
-            background: white;
-            padding: 20px;
-            border: 1px solid #e5e2dc;
-        }
-
-        .series-item strong {
-            display: block;
-            margin-bottom: 6px;
-            color: #3d4a3d;
-        }
-
-        .series-item span {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-
-        /* Decision Cards */
-
-        .decisions {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            margin-top: 25px;
+            margin-top: 30px;
         }
 
-        .decision {
+        .evidence-item {
             background: white;
-            padding: 25px;
             border: 1px solid #e5e2dc;
+            overflow: hidden;
         }
 
-        .decision h3 {
-            margin-top: 0;
+        .evidence-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .evidence-content {
+            padding: 20px;
+        }
+
+        .evidence-number {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 5px;
+        }
+
+        .evidence-item h3 {
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+        }
+
+        .evidence-item p {
+            font-size: 0.9rem;
+            color: #555;
+            margin: 0;
         }
 
 
-        /* Project Documentation */
+        /* Documentation */
 
         .documentation-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 40px 25px;
-            margin-top: 35px;
+            gap: 30px 25px;
+            margin-top: 30px;
         }
 
         .documentation-item {
@@ -282,12 +239,11 @@
         }
 
         .documentation-item img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    margin-bottom: 20px;
-
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            margin-bottom: 20px;
         }
 
         .documentation-item h3,
@@ -298,7 +254,8 @@
 
         .documentation-item h3 {
             margin-top: 0;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
         }
 
         .documentation-item p {
@@ -345,7 +302,7 @@
 
         .note {
             background: #f0eee8;
-            padding: 20px 25px;
+            padding: 18px 22px;
             margin-top: 25px;
             font-size: 0.9rem;
         }
@@ -374,13 +331,11 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .workflow {
+            .workflow,
+            .evidence-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .series,
-            .decisions,
-            .material-list,
             .documentation-grid {
                 grid-template-columns: 1fr;
             }
@@ -398,16 +353,14 @@
                 padding-right: 20px;
             }
 
-            .facts {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .workflow {
+            .facts,
+            .workflow,
+            .evidence-grid {
                 grid-template-columns: 1fr;
             }
 
-            .documentation-item img {
-                height: auto;
+            .hero {
+                margin-top: 50px;
             }
         }
 
@@ -433,7 +386,6 @@
     </nav>
 
 
-
     <!-- Hero -->
 
     <header class="hero">
@@ -451,14 +403,12 @@
         </p>
 
         <p class="description">
-            An archival processing project focused on organizing,
+            An independent archival project focused on organizing,
             describing, preserving, and improving access to historical
-            records of the International Book Project (IBP), a Lexington,
-            Kentucky nonprofit organization founded in 1966.
+            records of the International Book Project.
         </p>
 
     </header>
-
 
 
     <main>
@@ -495,124 +445,65 @@
         </section>
 
 
-
-        <!-- Overview -->
-
-        <section>
-
-            <h2>Project Overview</h2>
-
-            <p>
-                The International Book Project Records document more than five decades of nonprofit activity, including book donation and distribution programs, fundraising, organizational development, international partnerships, and community engagement.
-            </p>
-
-            <p>
-                As part of an independent archival project, I conducted an initial inventory, developed a processing plan, evaluated existing arrangement, proposed functional series, prepared archival descriptions, and planned preservation and digitization workflows for a heterogeneous collection.
-            </p>
-
-            <p>
-                The project focused on balancing archival principles with the practical needs, resources, and access requirements of a small nonprofit organization.
-            </p>
-
-        </section>
-
-
-
-        <!-- Workflow -->
+        <!-- My Work -->
 
         <section>
 
-            <h2>From Inventory to Access</h2>
-
-            <p>
-                I approached the collection as a complete processing
-                workflow, moving from initial assessment to arrangement,
-                description, preservation, digitization, and access.
-            </p>
+            <h2>My Work</h2>
 
             <div class="workflow">
 
                 <div class="workflow-step">
                     <div class="step-number">01</div>
-
                     <h3>Inventory</h3>
-
                     <p>
-                        Identified formats, date ranges, quantities,
-                        existing organization, and condition concerns.
+                        Assessed formats, dates, quantities,
+                        existing organization, and condition.
                     </p>
                 </div>
-
 
                 <div class="workflow-step">
                     <div class="step-number">02</div>
-
                     <h3>Processing Plan</h3>
-
                     <p>
-                        Developed a processing workflow, estimated
-                        processing time, and identified preservation needs.
+                        Defined processing tasks, priorities,
+                        preservation needs, and estimated workload.
                     </p>
                 </div>
-
 
                 <div class="workflow-step">
                     <div class="step-number">03</div>
-
                     <h3>Arrangement</h3>
-
                     <p>
-                        Evaluated existing order and developed functional
-                        series to improve intellectual access.
+                        Evaluated existing order and developed
+                        functional archival series.
                     </p>
                 </div>
-
 
                 <div class="workflow-step">
                     <div class="step-number">04</div>
-
                     <h3>Rehousing</h3>
-
                     <p>
-                        Planned refoldering and labeling using
-                        archival-quality housing.
+                        Rehoused selected records in archival folders
+                        and improved physical organization.
                     </p>
                 </div>
-
 
                 <div class="workflow-step">
                     <div class="step-number">05</div>
-
                     <h3>Description</h3>
-
                     <p>
-                        Prepared folder-level descriptions and a finding
-                        aid to support discovery.
+                        Created structured descriptions and a finding
+                        aid to support discovery and access.
                     </p>
                 </div>
-
 
                 <div class="workflow-step">
                     <div class="step-number">06</div>
-
                     <h3>Digitization</h3>
-
                     <p>
-                        Digitized textual records, photographs, slides,
-                        and audiovisual materials where equipment was
-                        available.
-                    </p>
-                </div>
-
-
-                <div class="workflow-step">
-                    <div class="step-number">07</div>
-
-                    <h3>Access</h3>
-
-                    <p>
-                        Organized digital files according to the archival
-                        arrangement and standardized file naming.
+                        Digitized selected textual, photographic,
+                        slide, and audiovisual materials.
                     </p>
                 </div>
 
@@ -621,361 +512,165 @@
         </section>
 
 
-
-        <!-- Collection Assessment -->
+        <!-- Project Evidence -->
 
         <section>
 
-            <h2>Collection Assessment</h2>
+            <h2>Project Evidence</h2>
 
             <p>
-                The initial inventory identified a heterogeneous collection
-                spanning multiple formats, subjects, and decades. The
-                accessible materials included both organizational records
-                and materials documenting the experiences of book recipients,
-                volunteers, donors, and community members.
+                Selected excerpts from the project documentation show
+                how I assessed, planned, and described the collection.
             </p>
 
-            <div class="material-list">
+            <div class="evidence-grid">
 
-                <div class="material">Photographs</div>
 
-                <div class="material">Correspondence</div>
+                <!-- Inventory -->
 
-                <div class="material">Administrative Records</div>
+                <div class="evidence-item">
 
-                <div class="material">Newsletters</div>
+                    <img
+                        src="images/archive/inventory-excerpt.jpg"
+                        alt="Excerpt from the International Book Project collection inventory"
+                    >
 
-                <div class="material">Newspaper & Periodical Coverage</div>
+                    <div class="evidence-content">
 
-                <div class="material">Financial Records</div>
+                        <div class="evidence-number">01</div>
 
-                <div class="material">Scrapbooks</div>
+                        <h3>Collection Inventory</h3>
 
-                <div class="material">Audiovisual Materials</div>
+                        <p>
+                            Documented record types, dates, quantities,
+                            and condition observations.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Processing Plan -->
+
+                <div class="evidence-item">
+
+                    <img
+                        src="images/archive/processing-plan-excerpt.jpg"
+                        alt="Excerpt from the International Book Project processing plan"
+                    >
+
+                    <div class="evidence-content">
+
+                        <div class="evidence-number">02</div>
+
+                        <h3>Processing Plan</h3>
+
+                        <p>
+                            Defined processing tasks, estimated workload,
+                            preservation priorities, and digitization needs.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Finding Aid -->
+
+                <div class="evidence-item">
+
+                    <img
+                        src="images/archive/finding-aid-excerpt.jpg"
+                        alt="Excerpt from the International Book Project finding aid"
+                    >
+
+                    <div class="evidence-content">
+
+                        <div class="evidence-number">03</div>
+
+                        <h3>Finding Aid</h3>
+
+                        <p>
+                            Developed hierarchical description from
+                            collection and series to folder level.
+                        </p>
+
+                    </div>
+
+                </div>
 
             </div>
-
-
-
-            <table class="collection-table">
-
-                <thead>
-
-                    <tr>
-                        <th>Format</th>
-                        <th>Approximate Quantity</th>
-                    </tr>
-
-                </thead>
-
-                <tbody>
-
-                    <tr>
-                        <td>Textual records</td>
-                        <td>1,400+ pages</td>
-                    </tr>
-
-                    <tr>
-                        <td>Photographs</td>
-                        <td>500+</td>
-                    </tr>
-
-                    <tr>
-                        <td>Slides</td>
-                        <td>250</td>
-                    </tr>
-
-                    <tr>
-                        <td>VHS tapes</td>
-                        <td>11</td>
-                    </tr>
-
-                    <tr>
-                        <td>U-matic cassettes</td>
-                        <td>5</td>
-                    </tr>
-
-                </tbody>
-
-            </table>
-
 
             <div class="note">
-
-                <strong>Scope note:</strong>
-
-                The initial inventory was limited to four accessible boxes.
-                Additional materials were known to be stored in the attic
-                but were not accessible during the project period.
-
+                <strong>Portfolio note:</strong>
+                Selected documents have been edited or excerpted for
+                portfolio use. Identifying and restricted information
+                has been omitted.
             </div>
 
         </section>
 
 
-
-        <!-- Arrangement -->
-
-        <section>
-
-            <h2>Arrangement</h2>
-
-            <p>
-                The existing collection had no consistent overarching
-                arrangement. Many folders contained mixed record types,
-                while some materials retained partial chronological or
-                topical groupings.
-            </p>
-
-            <p>
-                After consultation with the organization’s director,
-                rearrangement into functional series was permitted in order
-                to improve intellectual access and structural clarity.
-            </p>
-
-
-            <div class="series">
-
-                <div class="series-item">
-
-                    <strong>Series I — Correspondence</strong>
-
-                    <span>
-                        Organizational and individual correspondence.
-                    </span>
-
-                </div>
-
-
-                <div class="series-item">
-
-                    <strong>Series II — Newsletters</strong>
-
-                    <span>
-                        Organizational newsletters dating from 1973–2002.
-                    </span>
-
-                </div>
-
-
-                <div class="series-item">
-
-                    <strong>Series III — Newspaper & Periodical Coverage</strong>
-
-                    <span>
-                        Public coverage of IBP and related activities.
-                    </span>
-
-                </div>
-
-
-                <div class="series-item">
-
-                    <strong>Series IV — Administrative Records</strong>
-
-                    <span>
-                        Meeting minutes, board records, and annual reports.
-                    </span>
-
-                </div>
-
-
-                <div class="series-item">
-
-                    <strong>Series V — Photographic Materials</strong>
-
-                    <span>
-                        Photographs documenting IBP activities,
-                        volunteers, recipients, and founder Harriet Van Meter.
-                    </span>
-
-                </div>
-
-
-                <div class="series-item">
-
-                    <strong>Series VI — Financial Records</strong>
-
-                    <span>
-                        Financial reports and related fiscal records.
-                    </span>
-
-                </div>
-
-
-                <div class="series-item">
-
-                    <strong>Series VII — Outreach & Fundraising</strong>
-
-                    <span>
-                        Events, fundraising, and public engagement materials.
-                    </span>
-
-                </div>
-
-
-                <div class="series-item">
-
-                    <strong>Series VIII — Founder Personal Files</strong>
-
-                    <span>
-                        Personal correspondence and materials related to
-                        Harriet Van Meter.
-                    </span>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- Processing Decisions -->
+        <!-- Processing in Practice -->
 
         <section>
 
-            <h2>Processing Decisions</h2>
-
-            <div class="decisions">
-
-                <div class="decision">
-
-                    <h3>Existing Order</h3>
-
-                    <p>
-                        Rather than imposing a new arrangement without
-                        consultation, I evaluated existing groupings and
-                        discussed proposed rearrangement with the
-                        organization’s director.
-                    </p>
-
-                </div>
-
-
-                <div class="decision">
-
-                    <h3>Resource-Aware Processing</h3>
-
-                    <p>
-                        Processing decisions considered the organization’s
-                        available resources, existing housing, and practical
-                        access needs rather than assuming a museum-scale
-                        infrastructure.
-                    </p>
-
-                </div>
-
-
-                <div class="decision">
-
-                    <h3>Preservation</h3>
-
-                    <p>
-                        Rusted paper clips were identified for removal and
-                        records were planned for rehousing in acid-free
-                        folders.
-                    </p>
-
-                </div>
-
-
-                <div class="decision">
-
-                    <h3>Faded Materials</h3>
-
-                    <p>
-                        Two thermal-paper documents were highly faded.
-                        Digitization was prioritized to preserve access to
-                        information that was becoming difficult to read.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- Project Documentation -->
-
-        <section>
-
-            <h2>Project Documentation</h2>
-
-            <p>
-                Photographic documentation of the processing workflow,
-                from initial assessment of existing storage conditions
-                through arrangement and rehousing of archival materials.
-            </p>
-
+            <h2>Processing in Practice</h2>
 
             <div class="documentation-grid">
 
-
-                <!-- Original Boxes 1 -->
 
                 <div class="documentation-item">
 
                     <img
                         src="images/archive/archive-original-boxes-01.jpg"
-                        alt="Original storage boxes containing International Book Project archival materials"
+                        alt="Original storage boxes containing archival materials"
                     >
 
-                    <h3>Initial Collection Assessment</h3>
+                    <h3>Collection Assessment</h3>
 
                     <p>
-                        The project began with an assessment of the accessible
-                        materials, their existing storage conditions, and the
-                        overall physical organization of the collection.
+                        Assessed the accessible collection and its
+                        existing physical organization.
                     </p>
 
                 </div>
 
-
-                <!-- Original Boxes 2 -->
 
                 <div class="documentation-item">
 
                     <img
                         src="images/archive/archive-original-boxes-02.jpg"
-                        alt="Original storage arrangement of archival materials"
+                        alt="Original arrangement of archival materials"
                     >
 
                     <h3>Existing Arrangement</h3>
 
                     <p>
-                        Materials had accumulated in folders, scrapbooks,
-                        and storage boxes without a consistent overarching
-                        archival arrangement.
+                        Evaluated existing groupings before developing
+                        a new archival structure.
                     </p>
 
                 </div>
 
-
-                <!-- Original Boxes 3 -->
 
                 <div class="documentation-item">
 
                     <img
                         src="images/archive/archive-original-boxes-03.jpg"
-                        alt="Archival materials in their original storage condition"
+                        alt="Archival materials in original storage condition"
                     >
 
                     <h3>Collection Context</h3>
 
                     <p>
-                        The accessible materials included correspondence,
-                        administrative records, photographs, and audiovisual
-                        materials spanning several decades.
+                        Worked across correspondence, administrative
+                        records, photographs, and audiovisual materials.
                     </p>
 
                 </div>
 
-
-                <!-- Rehoused Folders 1 -->
 
                 <div class="documentation-item">
 
@@ -987,15 +682,12 @@
                     <h3>Rehousing & Arrangement</h3>
 
                     <p>
-                        Selected materials were reorganized into functional
-                        archival series and rehoused using archival folders
-                        to improve physical organization and preservation.
+                        Reorganized selected materials into functional
+                        series and archival folders.
                     </p>
 
                 </div>
 
-
-                <!-- Rehoused Folders 2 -->
 
                 <div class="documentation-item">
 
@@ -1007,79 +699,42 @@
                     <h3>Processed Materials</h3>
 
                     <p>
-                        Rehoused materials were organized to support more
-                        consistent access, description, and future
-                        preservation work.
+                        Improved physical organization to support
+                        description, preservation, and future access.
                     </p>
 
                 </div>
 
-
-            </div>
-
-        </section>
-
-
-
-        <!-- Digitization -->
-
-        <section>
-
-            <h2>Digitization</h2>
-
-            <p>
-                Digitization was planned as an integral part of the
-                processing workflow rather than as a separate activity.
-                Digital files were organized according to the established
-                archival structure and assigned standardized filenames.
-            </p>
-
-            <p>
-                The collection included multiple legacy formats requiring
-                different approaches to digitization. VHS and U-matic
-                materials presented additional challenges because
-                digitization requires real-time playback and specialized
-                equipment.
-            </p>
-
-
-            <div class="documentation-grid">
-
-
-                <!-- Slide Digitization -->
 
                 <div class="documentation-item">
 
                     <img
                         src="images/archive/archive-slide-digitization-01.jpg"
-                        alt="Historical slides being digitized as part of the archival project"
+                        alt="Historical slides being digitized"
                     >
 
                     <h3>Slide Digitization</h3>
 
                     <p>
-                        Historical slides were digitized in batches as part
-                        of the project’s audiovisual preservation workflow.
+                        Digitized historical slides as part of the
+                        audiovisual preservation workflow.
                     </p>
 
                 </div>
 
-
-                <!-- VHS Digitization -->
 
                 <div class="documentation-item">
 
                     <img
                         src="images/archive/archive-VHS-digitization-01.jpg"
-                        alt="VHS materials being digitized as part of the archival project"
+                        alt="VHS materials being digitized"
                     >
 
                     <h3>VHS Digitization</h3>
 
                     <p>
-                        VHS recordings were processed through a real-time
-                        digitization workflow, with attention to file
-                        management and preservation.
+                        Worked with legacy audiovisual formats and
+                        organized resulting digital files.
                     </p>
 
                 </div>
@@ -1087,49 +742,31 @@
 
             </div>
 
-
-            <div class="note">
-
-                <strong>Access note:</strong>
-
-                Digitized collection materials are not publicly displayed
-                in this portfolio because the collection is restricted to
-                internal organizational access. This page documents the
-                preservation and digitization workflow rather than
-                reproducing restricted collection content.
-
-            </div>
-
         </section>
 
 
-
-        <!-- Finding Aid -->
+        <!-- Skills -->
 
         <section>
 
-            <h2>Finding Aid</h2>
+            <h2>Skills</h2>
 
-            <p>
-                A finding aid was developed to provide intellectual access
-                to the processed collection. The description includes
-                collection-level information, administrative history,
-                scope and content, arrangement, and folder-level
-                descriptions.
-            </p>
+            <div class="skills">
 
-            <div class="note">
-
-                <strong>Access note:</strong>
-
-                The finding aid is currently maintained for internal
-                organizational use and is not publicly distributed through
-                this portfolio.
+                <span class="skill">Collection Assessment</span>
+                <span class="skill">Archival Processing</span>
+                <span class="skill">Arrangement</span>
+                <span class="skill">Finding Aids</span>
+                <span class="skill">Metadata</span>
+                <span class="skill">Preservation</span>
+                <span class="skill">Digitization</span>
+                <span class="skill">Community Archives</span>
+                <span class="skill">Digital Access</span>
+                <span class="skill">DACS</span>
 
             </div>
 
         </section>
-
 
 
         <!-- Archive Toolkit -->
@@ -1139,10 +776,9 @@
             <h2>Archive Toolkit</h2>
 
             <p>
-                A practical outcome of the project was the development of
-                an archival toolkit designed to help families and small
-                organizations begin organizing, describing, preserving,
-                and sharing historical materials.
+                A practical guide developed alongside the project to
+                help families and small organizations begin organizing
+                and preserving historical materials.
             </p>
 
             <a
@@ -1157,73 +793,7 @@
         </section>
 
 
-
-        <!-- Skills -->
-
-        <section>
-
-            <h2>Skills & Concepts</h2>
-
-            <div class="skills">
-
-                <span class="skill">Collection Assessment</span>
-
-                <span class="skill">Archival Processing</span>
-
-                <span class="skill">Arrangement</span>
-
-                <span class="skill">Finding Aids</span>
-
-                <span class="skill">Metadata</span>
-
-                <span class="skill">Preservation</span>
-
-                <span class="skill">Digitization</span>
-
-                <span class="skill">Community Archives</span>
-
-                <span class="skill">Digital Access</span>
-
-                <span class="skill">DACS</span>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- Reflection -->
-
-        <section>
-
-            <h2>Reflection</h2>
-
-            <p>
-                This project reinforced that archival practice requires
-                balancing professional standards with the context and
-                resources of the organization.
-            </p>
-
-            <p>
-                Working with a heterogeneous collection also demonstrated
-                how arrangement and description directly influence
-                discovery and access. Decisions about organization,
-                metadata, preservation, and digitization are interconnected
-                rather than isolated stages of processing.
-            </p>
-
-            <p>
-                Most importantly, the project allowed me to connect
-                archival theory with hands-on processing and to develop
-                practical approaches for making community collections
-                more usable and sustainable.
-            </p>
-
-        </section>
-
-
     </main>
-
 
 
     <footer>
